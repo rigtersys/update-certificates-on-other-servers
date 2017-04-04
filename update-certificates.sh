@@ -25,7 +25,7 @@ function get_certs {
 	echo "- Creating relevant symlinks for the new certificates"
 	cd /etc/letsencrypt/live/$1
 	for f in privkey fullchain chain cert; do 
-	    ls -1 ../../archive/$1/*-*.pem| head -n 1 | while read i; do ln -s $i $f.pem; done;
+	    ls -1tr ../../archive/$1/$f-*.pem| head -n 1 | while read i; do ln -s $i $f.pem; done;
         done;
 }
 
