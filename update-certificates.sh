@@ -7,7 +7,6 @@ function usage {
    echo "Where <servertype> is one of the following:"
    echo "- dovecot"
    echo "- postfix"
-   echo "- apache"
 
 }
 
