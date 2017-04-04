@@ -33,7 +33,7 @@ if [[ "$1" == "" ]] || [[ "$2" == "" ]]; then
     usage
 fi
 
-if [[ "$2" =~ ^(dovecot|postfix|apache2)$ ]]; then 
+if [[ "$2" =~ ^(dovecot|postfix)$ ]]; then 
    get_certs $1
 
    echo "Restarting service $2"
