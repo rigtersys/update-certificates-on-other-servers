@@ -21,7 +21,7 @@ function usage {
 
 function get_certs {
 	echo "- Creating new certificates on firewall for domain $1"
-	ssh root@firewall1 "cd /opt/dehydrated; ./dehydrated -x -c -d $1"		
+	ssh root@firewall1 "cd /opt/dehydrated; ./renew_single_certificate.sh $1"		
 
 	echo "Retrieving certificates from firewall"
 	rsync -a -e "ssh root@firewall1" :/opt/dehydrated/certs/$1/*-*.pem /etc/letsencrypt/archive/$1/
